@@ -1,0 +1,49 @@
+server {
+
+    listen   80;
+    server_name  www.example.com example.com;
+
+    root   /home/www/www.example.com/public;
+    index index.php  index.html index.htm;
+
+    location / {
+
+        # rewrite
+        if (-f $request_filename) { break; }
+        if (!-f $request_filename) { rewrite  ^(.*)$  /index.php  last; break ; }
+        if (!-d $request_filename) { rewrite  ^(.*)$  /index.php  last; break; }
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    # compression
+    gzip  on;
+    gzip_http_version 1.1;
+    gzip_vary on;
+    gzip_comp_level 6;
+    gzip_proxied any;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript image/x-icon image/png image/jpg image/jpeg image/gif;
+    gzip_buffers 16 8k;
+    gzip_disable "MSIE [1-6].(?!.*SV1)";
+
+    # expire headers
+    location ~* \.(jpg|jpeg|gif|css|png|js|ico)$ {
+        expires max;
+        break;
+    }
+
+    # fuck you htaccess
+    location ~ /\.ht { deny  all; }
+    # fuck you favicon
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    # logs
+    access_log  /home/www/logs/nginx-access.log;
+    error_log  /home/www/logs/nginx-error.log;
+
+}

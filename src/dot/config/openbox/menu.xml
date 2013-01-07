@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Openbox 3">
+
+  <item label="Terminal (W-Enter)"><action name="Execute"><execute>rxvt</execute></action></item>
+  <item label="Emacs"><action name="Execute"><execute>emacs</execute></action></item>
+  <item label="Run ... (W-r)"><action name="Execute"><execute>grun</execute></action></item>
+
+  <menu id="terms-menu" label="Terminal">
+    <item label="Red terminal"><action name="Execute"><execute>rxvt -tint red</execute></action></item>
+    <item label="Blue terminal"><action name="Execute"><execute>rxvt -tint blue</execute></action></item>
+    <item label="Yellow terminal"><action name="Execute"><execute>rxvt -tint yellow</execute></action></item>
+  </menu>
+
+  <separator />
+
+  <item label="Web browser"><action name="Execute"><execute>x-www-browser</execute></action></item>
+  <item label="File browser"><action name="Execute"><execute>thunar</execute></action></item>
+
+  <menu id="mmd-menu" label="Multimedia">
+    <item label="Cmus"><action name="Execute"><execute>rxvt -e cmus</execute></action></item>
+    <item label="VLC"><action name="Execute"><execute>vlc</execute></action></item>
+    <item label="AlsaMixer"><action name="Execute"><execute>alsamixergui</execute></action></item>
+  </menu>
+
+  <separator />
+
+  <menu id="openbox-menu" label="Openbox">
+    <item label="Themes"><action name="Execute"><execute>lxappearance</execute></action></item>
+    <item label="Reconfigure"><action name="Reconfigure" /></item>
+    <item label="Exit"><action name="Exit" /></item>
+  </menu>
+
+  <item label="Lock screen"><action name="Execute"><execute>i3lock</execute></action></item>
+  <item label="Reboot"><action name="Execute"><execute>gksu reboot</execute></action></item>
+  <item label="Halt"><action name="Execute"><execute>gksu halt</execute></action></item>
+
+</menu>
+
+</openbox_menu>

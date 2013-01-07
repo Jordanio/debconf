@@ -1,0 +1,7 @@
+rxvt*background : black
+rxvt*foreground : white
+rxvt*font : xft:Bitstream Vera Sans Mono:pixelsize=12
+rxvt*transparent : true
+rxvt*shading : 30
+rxvt*tint : black
+rxvt*scrollBar : false

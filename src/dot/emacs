@@ -1,0 +1,103 @@
+;; Modes
+(message "Loading modes ...")
+(add-to-list 'load-path "~/.emacs.d/")
+(load "php-mode-improved")
+(load "autopair")
+(load "blank-mode")
+(load "ruby-mode")
+(autoload 'php-mode "php-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+
+;; Locale
+(message "Setting up locale ...")
+(set-language-environment 'UTF-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; Development behaviour
+(message "Setting up development behaviour ...")
+(setq-default show-trailing-whitespace t)
+(setq-default highlight-tabs t)
+(show-paren-mode t)
+(setq require-final-newline t)
+(setq next-line-add-newlines nil)
+(setq kill-whole-line t)
+(setq require-final-newline t)
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(autopair-global-mode t)
+
+;; Indetation
+(message "Setting up indentation ...")
+(setq-default tab-width 4
+              c-basic-offset 4
+              c-hanging-comment-ender-p nil
+              indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
+
+(c-add-style
+ "custom-php-indent"
+ '((c-offsets-alist
+    (arglist-close . 0)
+    (arglist-intro . 4)
+    (case-label . 4))))
+
+(add-hook 'php-mode-hook
+      '(lambda ()
+         (setq comment-start "// ")
+         (setq comment-end "")
+         (set (make-local-variable 'indent-tabs-mode) nil)
+         (c-set-style "custom-php-indent")))
+
+(defun indent-all ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
+;; Keyboard
+(message "Setting up keyboard layout ...")
+(setq mac-option-modifier nil
+      mac-command-modifier 'meta
+      x-select-enable-clipboard t)
+(global-set-key [delete] 'delete-char)
+(global-set-key "\C-h" 'backward-delete-char)
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+(define-key my-keys-minor-mode-map (kbd "C-c C-b") 'blank-mode)
+(define-key my-keys-minor-mode-map (kbd "C-c C-g") 'goto-line)
+(define-key my-keys-minor-mode-map (kbd "C-c C-c") 'comment-region)
+(define-key my-keys-minor-mode-map (kbd "C-c C-u") 'uncomment-region)
+(define-key my-keys-minor-mode-map (kbd "C-c C-b") 'blank-mode)
+(define-minor-mode my-keys-minor-mode "My keys minor mode"  t " my-keys" 'my-keys-minor-mode-map)
+(my-keys-minor-mode t)
+(defun my-minibuffer-setup-hook () (my-keys-minor-mode 0))
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+;; Look n feel
+
+(message "Setting up look and feel ...")
+(setq inhibit-startup-message t)
+(setq initial-scratch-message "")
+(setq make-backup-files nil)
+(fset 'yes-or-no-p 'y-or-n-p)
+(global-font-lock-mode t)
+(transient-mark-mode t)
+(set-face-background 'highlight "#333")
+(set-face-foreground 'highlight nil)
+(global-hl-line-mode t)
+(line-number-mode t)
+(column-number-mode t)
+(display-time)
+
+;; X mode
+(defun setXmode ()
+  (message "Setting up X mode ...")
+  (tool-bar-mode 0)
+  (set-frame-parameter (selected-frame) 'alpha '(95 50))
+  (add-to-list 'default-frame-alist '(alpha 95 50))
+  (custom-set-variables '(custom-enabled-themes (quote (deeper-blue))))
+)
+(if window-system (setXmode))
