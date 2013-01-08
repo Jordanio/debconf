@@ -17,7 +17,7 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode
         apt-get install -y lxappearance tango-icon-theme conky grun gksu i3lock ttf-bitstream-vera libnotify-bin notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
-        apt-get install -y chromium cmus vlc
+        apt-get install -y chromium-browser cmus vlc
 
         Xorg -configure
         alsactl init
