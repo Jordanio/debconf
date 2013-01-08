@@ -22,6 +22,7 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y chromium-browser
         apt-get install -y icedove
         apt-get install -y flashplugin-nonfree
+        apt-get install -y virtualbox-ose virtualbox-ose-dkms
 
         Xorg -configure
         alsactl init
