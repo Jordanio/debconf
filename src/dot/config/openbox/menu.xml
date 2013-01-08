@@ -36,7 +36,7 @@
     <item label="Exit"><action name="Exit" /></item>
   </menu>
 
-  <item label="Lock screen"><action name="Execute"><execute>i3lock</execute></action></item>
+  <item label="Lock screen"><action name="Execute"><execute>slock</execute></action></item>
   <item label="Reboot"><action name="Execute"><execute>gksu reboot</execute></action></item>
   <item label="Halt"><action name="Execute"><execute>gksu halt</execute></action></item>
 
