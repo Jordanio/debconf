@@ -9,7 +9,7 @@ read CHOICE
 if [[ $CHOICE == "y" ]]; then
 
     echo "And who is the main user ? "
-    read -n MAINUSER
+    read MAINUSER
 
     if ! [ -z $MAINUSER ]; then
 

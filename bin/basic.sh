@@ -14,12 +14,12 @@ if [[ $CHOICE == "y" ]]; then
 
     echo
     echo "Install bash and emacs basic config ? (y/N) "
-    read -n SUBCHOICE
+    read SUBCHOICE
 
     if [[ $SUBCHOICE == "y" ]]; then
 
         echo "And who is the main user ? "
-        read -n MAINUSER
+        read MAINUSER
 
         if ! [ -z $MAINUSER ]; then
             for file in emacs emacs.d bashrc; do
