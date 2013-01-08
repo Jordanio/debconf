@@ -8,6 +8,8 @@ read CHOICE
 
 if [[ $CHOICE == "y" ]]; then
 
+    cp /etc/apt/sources.list /etc/apt/sources.list.ori
+    sed -e 's/ main$/ main contrib non-free/g' -i /etc/apt/sources.list
     apt-get update
     apt-get autoremove --purge -y exim4-.\* portmap rpcbind
     apt-get install -y git subversion curl irb rsync emacs emacs-goodies-el php-elisp nmap fail2ban httperf tree unzip gcc build-essential linux-headers-$(uname -r) python task ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby

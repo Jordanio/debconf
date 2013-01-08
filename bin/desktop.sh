@@ -14,7 +14,8 @@ if [[ $CHOICE == "y" ]]; then
     if ! [ -z $MAINUSER ]; then
 
         apt-get update
-        apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode lxappearance tango-icon-theme conky grun gksu i3lock ttf-bitstream-vera libnotify-bin notify-osd notification-daemon
+        apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode
+        apt-get install -y lxappearance tango-icon-theme conky grun gksu i3lock ttf-bitstream-vera libnotify-bin notify-osd notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
         apt-get install -y chromium cmus vlc
 
