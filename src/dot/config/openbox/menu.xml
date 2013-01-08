@@ -21,6 +21,7 @@
 
   <item label="Web browser"><action name="Execute"><execute>x-www-browser</execute></action></item>
   <item label="File browser"><action name="Execute"><execute>thunar</execute></action></item>
+  <item label="Screenshot"><action name="Execute"><execute>scrot</execute></action></item>
 
   <menu id="mmd-menu" label="Multimedia">
     <item label="Cmus"><action name="Execute"><execute>rxvt -e cmus</execute></action></item>
