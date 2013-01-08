@@ -22,6 +22,7 @@
   <item label="Web browser"><action name="Execute"><execute>x-www-browser</execute></action></item>
   <item label="File browser"><action name="Execute"><execute>thunar</execute></action></item>
   <item label="Emails"><action name="Execute"><execute>icedove</execute></action></item>
+  <item label="Virtualbox"><action name="Execute"><execute>virtualbox</execute></action></item>
   <item label="Pidgin"><action name="Execute"><execute>pidgin</execute></action></item>
   <item label="Screenshot"><action name="Execute"><execute>scrot</execute></action></item>
 
