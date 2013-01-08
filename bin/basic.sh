@@ -13,12 +13,12 @@ if [[ $CHOICE == "y" ]]; then
     apt-get install -y git subversion curl irb rsync emacs emacs-goodies-el php-elisp nmap fail2ban httperf tree unzip gcc build-essential linux-headers-$(uname -r) python task ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby
 
     echo
-    echo "Install bash and emacs basic config ? (y/N) "
+    echo -n "Install bash and emacs basic config ? (y/N) "
     read SUBCHOICE
 
     if [[ $SUBCHOICE == "y" ]]; then
 
-        echo "And who is the main user ? "
+        echo -n "And who is the main user ? "
         read MAINUSER
 
         if ! [ -z $MAINUSER ]; then
