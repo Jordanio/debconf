@@ -11,7 +11,7 @@ if [[ $CHOICE == "y" ]]; then
     echo -n "And who is the main user ? "
     read MAINUSER
 
-    echo -n "Would you like to install virtualbox ? "
+    echo -n "Would you like to install virtualbox ? (y/N) "
     read VIRT
 
     if ! [ -z $MAINUSER ]; then
