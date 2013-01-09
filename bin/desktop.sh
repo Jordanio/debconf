@@ -11,6 +11,9 @@ if [[ $CHOICE == "y" ]]; then
     echo -n "And who is the main user ? "
     read MAINUSER
 
+    echo -n "Would you like to install virtualbox ? "
+    read VIRT
+
     if ! [ -z $MAINUSER ]; then
 
         apt-get update
@@ -19,10 +22,12 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y libnotify-bin notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
         apt-get install -y cmus vlc scrot pidgin xpdf mirage
-        apt-get install -y chromium-browser
-        apt-get install -y icedove
+        apt-get install -y chromium-browser icedove
         apt-get install -y flashplugin-nonfree
-        apt-get install -y virtualbox-ose virtualbox-ose-dkms
+
+        if [[ $VIRT == "y" ]]; then
+            apt-get install -y virtualbox-ose virtualbox-ose-dkms virtualbox-ose-guest-dkms
+        fi
 
         Xorg -configure
         alsactl init
