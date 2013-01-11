@@ -21,8 +21,7 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera furiusisomount thunar
         apt-get install -y libnotify-bin notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
-        apt-get install -y cmus vlc scrot pidgin xpdf mirage
-        apt-get install -y chromium-browser icedove
+        apt-get install -y iceweasel icedove cmus vlc scrot pidgin xpdf mirage
         apt-get install -y flashplugin-nonfree
 
         if [[ $VIRT == "y" ]]; then
