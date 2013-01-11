@@ -17,7 +17,7 @@ if [[ $CHOICE == "y" ]]; then
     if ! [ -z $MAINUSER ]; then
 
         apt-get update
-        apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode
+        apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode slim
         apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera furiusisomount thunar
         apt-get install -y libnotify-bin notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
@@ -30,6 +30,10 @@ if [[ $CHOICE == "y" ]]; then
 
         Xorg -configure
         alsactl init
+
+        cp -R $SPATH/../src/slim/debian-light /usr/share/slim/themes/
+        cp /etc/slim.conf /etc/slim.conf.ori
+        sed -e 's/debian-spacefun/debian-light/g' -i /etc/slim.conf
 
         for file in config conkyrc xinitrc Xdefaults Xresources fonts.conf; do
             cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
