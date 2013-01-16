@@ -1,2 +1,1 @@
-chmod 700 launch.sh bin/*.sh
-./launch.sh
+chmod 700 launch.sh bin/*.sh && ./launch.sh
