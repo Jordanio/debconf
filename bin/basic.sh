@@ -25,6 +25,7 @@ if [[ $CHOICE == "y" ]]; then
         echo -n "And who is the main user ? "
         read MAINUSER
 
+        cp $SPATH/../src/fwall.sh ~/fwall.sh;
         if ! [ -z $MAINUSER ]; then
             for file in emacs emacs.d bashrc; do
                 cp -R $SPATH/../src/dot/$file ~/.$file;
