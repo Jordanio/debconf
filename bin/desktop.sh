@@ -25,7 +25,7 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y flashplugin-nonfree
 
         if [[ $VIRT == "y" ]]; then
-            apt-get install -y virtualbox-ose virtualbox-ose-dkms virtualbox-ose-guest-dkms
+            apt-get install -y virtualbox-ose virtualbox-ose-dkms
         fi
 
         Xorg -configure
