@@ -5,3 +5,4 @@ feh --bg-scale ~/images/debian-blue.png &
 conky &
 tint2 &
 rxvt &
+emacs &
