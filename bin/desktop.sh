@@ -34,7 +34,7 @@ if [[ $CHOICE == "y" ]]; then
         for file in config conkyrc xinitrc Xdefaults Xresources fonts.conf; do
             cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
         done
-        cp -R $SPATH/../src/images /home/$MAINUSER/
+        cp -R $SPATH/../src/Images /home/$MAINUSER/
         chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/.*
         chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/*
         xrdb -merge /home/$MAINUSER/.Xresources
