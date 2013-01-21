@@ -18,6 +18,7 @@ function main_menu {
     echo " * 2. Install desktop (Openbox)"
     echo " * 3. Install web server (Nginx/Apache)"
     echo " * 4. Install database server (Postgresql/Mysql)"
+    echo " * 5. Install Pentesting tools"
     echo " * 0. Exit"
     echo
 }
@@ -35,6 +36,8 @@ while true; do
         $SPATH/bin/webserver.sh;
     elif [[ $CHOICE == "4" ]]; then
         $SPATH/bin/dbserver.sh;
+    elif [[ $CHOICE == "5" ]]; then
+        $SPATH/bin/pentest.sh;
     elif [[ $CHOICE == "0" ]]; then
         do_exit
     fi
