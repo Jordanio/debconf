@@ -92,11 +92,13 @@
 (line-number-mode t)
 (column-number-mode t)
 (display-time)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; X mode
 (defun setXmode ()
   (message "Setting up X mode ...")
-  (tool-bar-mode 0)
   ;; (set-frame-parameter (selected-frame) 'alpha '(95 50))
   ;; (add-to-list 'default-frame-alist '(alpha 95 50))
   (color-theme-monokai)
