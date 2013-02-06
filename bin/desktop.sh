@@ -21,7 +21,7 @@ if [[ $CHOICE == "y" ]]; then
         apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera furiusisomount thunar orage
         apt-get install -y libnotify-bin notification-daemon
         apt-get install -y alsa alsa-tools alsa-oss alsamixergui
-        apt-get install -y iceweasel icedove cmus vlc scrot pidgin xpdf mirage calcurse
+        apt-get install -y chromium-browser cmus vlc scrot pidgin xpdf mirage calcurse filezilla
         apt-get install -y flashplugin-nonfree
 
         if [[ $VIRT == "y" ]]; then
@@ -41,5 +41,7 @@ if [[ $CHOICE == "y" ]]; then
     else
         echo "Failed! No user has been given. Retry !";
     fi
+
+    echo "You can install Firefox and Thunderbird now!"
 
 fi
