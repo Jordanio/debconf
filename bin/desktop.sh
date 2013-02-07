@@ -31,7 +31,7 @@ if [[ $CHOICE == "y" ]]; then
         Xorg -configure
         alsactl init
 
-        for file in config conkyrc xinitrc Xdefaults Xresources fonts.conf; do
+        for file in config conky xinitrc Xdefaults Xresources fonts.conf; do
             cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
         done
         cp -R $SPATH/../src/Images /home/$MAINUSER/
