@@ -71,7 +71,6 @@
 (define-key my-keys-minor-mode-map (kbd "C-c C-g") 'goto-line)
 (define-key my-keys-minor-mode-map (kbd "C-c C-c") 'comment-region)
 (define-key my-keys-minor-mode-map (kbd "C-c C-u") 'uncomment-region)
-(define-key my-keys-minor-mode-map (kbd "C-c C-b") 'blank-mode)
 (define-minor-mode my-keys-minor-mode "My keys minor mode"  t " my-keys" 'my-keys-minor-mode-map)
 (my-keys-minor-mode t)
 (defun my-minibuffer-setup-hook () (my-keys-minor-mode 0))
