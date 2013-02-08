@@ -30,7 +30,7 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (autopair-global-mode t)
 
-;; Indetation
+;; Indentation
 (message "Setting up indentation ...")
 (setq-default tab-width 4
               c-basic-offset 4
@@ -78,7 +78,6 @@
 (add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
 
 ;; Look n feel
-
 (message "Setting up look and feel ...")
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
@@ -96,11 +95,18 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+;; Transparency
+ (defun transparency (value)
+   "Sets the transparency of the frame window. 0=transparent/100=opaque"
+   (interactive "nTransparency Value 0 - 100 opaque:")
+   (set-frame-parameter (selected-frame) 'alpha value))
+
 ;; X mode
 (defun setXmode ()
   (message "Setting up X mode ...")
   ;; (set-frame-parameter (selected-frame) 'alpha '(95 50))
   ;; (add-to-list 'default-frame-alist '(alpha 95 50))
   (color-theme-monokai)
+  (transparency 95)
 )
 (if window-system (setXmode))
