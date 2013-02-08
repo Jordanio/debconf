@@ -31,6 +31,7 @@
     <item label="Cmus"><action name="Execute"><execute>rxvt -e cmus</execute></action></item>
     <item label="VLC"><action name="Execute"><execute>vlc</execute></action></item>
     <item label="AlsaMixer"><action name="Execute"><execute>alsamixergui</execute></action></item>
+    <item label="Brasero"><action name="Execute"><execute>brasero</execute></action></item>
   </menu>
 
   <separator />
