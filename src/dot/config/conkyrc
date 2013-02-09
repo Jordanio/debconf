@@ -39,4 +39,4 @@ override_utf8_locale no
 use_spacer no
 
 TEXT
-${color1}CPU ${color2}${cpubar 9,100}${offset 30}${color1}HDD ${color2}${fs_bar 9,100}${offset 30}${color1}MEM ${color2}${membar 9, 100}${offset 30}${color1}DOWN ${color2}${downspeedgraph wlan0 9,100}${offset 30}${color1}UP ${color2}${upspeedgraph wlan0 9,100}
+${color1}CPU ${color2}${cpubar 9,100}${offset 30}${color1}MEM ${color2}${membar 9, 100}${offset 30}${color1}HDD ${color2}${fs_bar 9,100}${offset 30}${color1}DOWN ${color2}${downspeedgraph wlan0 9,100}${offset 30}${color1}UP ${color2}${upspeedgraph wlan0 9,100}
