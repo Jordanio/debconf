@@ -91,14 +91,14 @@ systray_icon_size = 16
 systray_icon_asb = 70 0 0
 
 # Clock
-# time1_format = %H:%M:%S
-# time1_font = sans 8
-# time2_format = %a %d %b
-# time2_font = sans 6
-# clock_font_color = #FFFFFF 74
-# clock_padding = 1 0
-# clock_background_id = 0
-# clock_rclick_command = orage
+time1_format = %H:%M:%S
+time1_font = sans 8
+time2_format = %a %d %b
+time2_font = sans 6
+clock_font_color = #FFFFFF 74
+clock_padding = 1 0
+clock_background_id = 0
+clock_rclick_command = orage
 
 # Tooltips
 tooltip_padding = 2 2
@@ -115,14 +115,14 @@ mouse_scroll_up = toggle
 mouse_scroll_down = iconify
 
 # Battery
-# battery = 1
+battery = 1
 battery_low_status = 10
 battery_low_cmd = notify-send "battery low"
-# battery_hide = 98
-# bat1_font = sans 8
-# bat2_font = sans 6
-# battery_font_color = #FFFFFF 74
-# battery_padding = 1 0
-# battery_background_id = 0
+battery_hide = 98
+bat1_font = sans 8
+bat2_font = sans 6
+battery_font_color = #FFFFFF 74
+battery_padding = 1 0
+battery_background_id = 0
 
 # End of config
