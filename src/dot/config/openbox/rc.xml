@@ -112,30 +112,30 @@
     </keybind>
 
     <!-- Move window -->
-    <keybind key="A-Down">
+    <keybind key="C-A-Down">
       <action name="MoveRelative"><x>0</x><y>10</y></action>
     </keybind>
-    <keybind key="A-Up">
+    <keybind key="C-A-Up">
       <action name="MoveRelative"><x>0</x><y>-10</y></action>
     </keybind>
-    <keybind key="A-Left">
+    <keybind key="C-A-Left">
       <action name="MoveRelative"><x>-10</x><y>0</y></action>
     </keybind>
-    <keybind key="A-Right">
+    <keybind key="C-A-Right">
       <action name="MoveRelative"><x>10</x><y>0</y></action>
     </keybind>
 
     <!-- Resize window -->
-    <keybind key="A-S-Down">
+    <keybind key="C-A-S-Down">
       <action name="ResizeRelative"><bottom>5</bottom></action>
     </keybind>
-    <keybind key="A-S-Up">
+    <keybind key="C-A-S-Up">
       <action name="ResizeRelative"><bottom>-5</bottom></action>
     </keybind>
-    <keybind key="A-S-Right">
+    <keybind key="C-A-S-Right">
       <action name="ResizeRelative"><right>5</right></action>
     </keybind>
-    <keybind key="A-S-Left">
+    <keybind key="C-A-S-Left">
       <action name="ResizeRelative"><right>-5</right></action>
     </keybind>
 
