@@ -43,7 +43,7 @@ function install_nginx {
 }
 
 function install_apache2 {
-    apt-get install -y apache2 php5 php5-dev php-pear  php5-xdebug graphviz php5-mysql php5-pgsql php-gettext php5-cli php5-curl php5-gd php5-mcrypt php-apc postgresql-client mysql-client
+    apt-get install -y apache2 php5 php5-dev php-pear  php5-xdebug graphviz php5-mysql php5-pgsql php-gettext php5-cli php5-curl php5-gd php5-mcrypt php-apc postgresql-client mysql-client apachetop
     a2enmod rewrite
     a2enmod php5
     sed -e 's/ServerTokens\(.*\)$/ServerTokens Prod/g' -i /etc/apache2/conf.d/security
