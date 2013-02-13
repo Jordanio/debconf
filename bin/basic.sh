@@ -25,14 +25,15 @@ if [[ $CHOICE == "y" ]]; then
         echo -n "And who is the main user ? "
         read MAINUSER
 
-        cp $SPATH/../src/fwall.sh ~/fwall.sh;
+        cp -R $SPATH/../src/bin ~/bin;
+        cp -R $SPATH/../src/bin /home/$MAINUSER/bin;
         if ! [ -z $MAINUSER ]; then
             for file in emacs emacs.d bashrc; do
                 cp -R $SPATH/../src/dot/$file ~/.$file;
                 cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
             done
             chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/.*
-            source ~/.bashrc
+            chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/bin
         else
             echo "Failed! No user has been given. Retry !";
         fi
