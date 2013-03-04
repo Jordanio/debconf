@@ -85,7 +85,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode t)
 (transient-mark-mode t)
-(fci-mode t)
 (set-face-background 'highlight "#333")
 (set-face-foreground 'highlight nil)
 (global-hl-line-mode t)
