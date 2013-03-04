@@ -5,7 +5,6 @@
 (load "autopair")
 (load "blank-mode")
 (load "ruby-mode")
-(load "fill-column-indicator")
 (load "monokai-theme")
 (autoload 'php-mode "php-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
