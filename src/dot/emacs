@@ -1,3 +1,7 @@
+(setq user-full-name "Pierre Lecocq"
+;;      user-mail-address "mail@mail.com"
+)
+
 ;; Modes
 (message "Loading modes ...")
 (add-to-list 'load-path "~/.emacs.d/")
@@ -109,3 +113,14 @@
   (transparency 95)
 )
 (if window-system (setXmode))
+
+;; Org-mode strike done tasks
+(setq org-fontify-done-headline t)
+(custom-set-faces
+ '(org-done ((t (:foreground "PaleGreen"
+                             :weight normal
+                             :strike-through t))))
+ '(org-headline-done
+   ((((class color) (min-colors 16) (background dark))
+     (:foreground "Grey55" :strike-through t)))))
+
