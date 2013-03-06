@@ -8,6 +8,14 @@ read CHOICE
 
 if [[ $CHOICE == "y" ]]; then
 
+    echo
+    echo -n "Install bash and emacs basic config ? (y/N) "
+    read SUBCHOICE
+
+    echo
+    echo -n "And who is the main user ? "
+    read MAINUSER
+
     cp /etc/apt/sources.list /etc/apt/sources.list.ori
     sed -e 's/ main$/ main contrib non-free/g' -i /etc/apt/sources.list
     apt-get update
@@ -16,14 +24,7 @@ if [[ $CHOICE == "y" ]]; then
     apt-get install -y clamav selinux-basics selinux-policy-default
     selinux-activate
 
-    echo
-    echo -n "Install bash and emacs basic config ? (y/N) "
-    read SUBCHOICE
-
     if [[ $SUBCHOICE == "y" ]]; then
-
-        echo -n "And who is the main user ? "
-        read MAINUSER
 
         cp -R $SPATH/../src/bin ~/bin;
         cp -R $SPATH/../src/bin /home/$MAINUSER/bin;
