@@ -109,6 +109,7 @@
   (message "Setting up X mode ...")
   ;; (set-frame-parameter (selected-frame) 'alpha '(95 50))
   ;; (add-to-list 'default-frame-alist '(alpha 95 50))
+  (global-linum-mode t)
   (color-theme-monokai)
   (transparency 95)
 )
