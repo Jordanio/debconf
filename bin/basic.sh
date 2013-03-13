@@ -25,7 +25,7 @@ if [[ $CHOICE == "y" ]]; then
     apt-get update
     apt-get autoremove --purge -y exim4-.\* portmap rpcbind
     apt-get install -y git subversion curl irb rsync emacs emacs-goodies-el php-elisp tree unzip gcc build-essential linux-headers-$(uname -r) python ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby libxslt-dev libxml2-dev htop sloccount aria2
-    apt-get install -y nmap fail2ban denyhosts httperf siege iptraf clamav selinux-basics selinux-policy-default
+    apt-get install -y nmap fail2ban denyhosts tcpdump httperf siege iptraf clamav selinux-basics selinux-policy-default
     selinux-activate
 
     if [[ $SUBCHOICE == "y" ]]; then
