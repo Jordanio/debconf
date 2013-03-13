@@ -19,7 +19,7 @@
 
   <separator />
 
-  <item label="Web browser"><action name="Execute"><execute>firefox</execute></action></item>
+  <item label="Web browser"><action name="Execute"><execute>x-www-browser</execute></action></item>
   <item label="File browser"><action name="Execute"><execute>thunar</execute></action></item>
   <item label="FTP"><action name="Execute"><execute>filezilla</execute></action></item>
   <item label="Emails"><action name="Execute"><execute>thunderbird</execute></action></item>
