@@ -16,6 +16,10 @@ if [[ $CHOICE == "y" ]]; then
     echo -n "And who is the main user ? "
     read MAINUSER
 
+    rm -rf /usr/share/man/??
+    rm -rf /usr/share/man/??_*
+    rm -rf /usr/share/doc/*/copyright*
+
     cp /etc/apt/sources.list /etc/apt/sources.list.ori
     sed -e 's/ main$/ main contrib non-free/g' -i /etc/apt/sources.list
     apt-get update
