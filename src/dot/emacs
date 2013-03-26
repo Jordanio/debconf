@@ -132,13 +132,9 @@
      "#security"
      "#linux"
      "#debian"
-     "#kernel"
-     "#raspbian"
      "#php"
      "#ruby"
-     "#postgresql"
      "#nginx"
-     "#git"
      )))
 (erc-track-mode t)
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
