@@ -128,13 +128,8 @@
 (setq erc-autojoin-channels-alist
   '((".*\\.freenode.net"
      "#emacs"
-     "#r_netsec"
      "#security"
      "#linux"
-     "#debian"
-     "#php"
-     "#ruby"
-     "#nginx"
      )))
 (erc-track-mode t)
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
