@@ -1,5 +1,5 @@
 (setq user-full-name "Pierre Lecocq"
-;;      user-mail-address "mail@mail.com"
+;;      user-mail-address "pierre.lecocq@mail.com"
 )
 
 ;; Modes
@@ -7,9 +7,10 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (load "php-mode-improved")
 (load "autopair")
-(load "blank-mode")
+;;(load "blank-mode")
 (load "ruby-mode")
-(load "monokai-theme")
+(load "auto-complete")
+(load "fill-column-indicator")
 (autoload 'php-mode "php-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 
@@ -70,15 +71,10 @@
       x-select-enable-clipboard t)
 (global-set-key [delete] 'delete-char)
 (global-set-key "\C-h" 'backward-delete-char)
-(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
-(define-key my-keys-minor-mode-map (kbd "C-c C-b") 'blank-mode)
-(define-key my-keys-minor-mode-map (kbd "C-c C-g") 'goto-line)
-(define-key my-keys-minor-mode-map (kbd "C-c C-c") 'comment-region)
-(define-key my-keys-minor-mode-map (kbd "C-c C-u") 'uncomment-region)
-(define-minor-mode my-keys-minor-mode "My keys minor mode"  t " my-keys" 'my-keys-minor-mode-map)
-(my-keys-minor-mode t)
-(defun my-minibuffer-setup-hook () (my-keys-minor-mode 0))
-(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+(global-set-key (kbd "C-c e") 'djcb-erc-start-or-switch) ;; Switch to ERC
+(global-set-key (kbd "C-c C-g") 'goto-line) ;; Goto line
+(global-set-key (kbd "C-c C-g") 'comment-region) ;; Comment
+(global-set-key (kbd "C-c C-u") 'uncomment-region) ;; Uncomment
 
 ;; Look n feel
 (message "Setting up look and feel ...")
@@ -88,6 +84,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode t)
 (transient-mark-mode t)
+(fci-mode t)
 (set-face-background 'highlight "#333")
 (set-face-foreground 'highlight nil)
 (global-hl-line-mode t)
@@ -109,11 +106,11 @@
   (message "Setting up X mode ...")
   ;; (set-frame-parameter (selected-frame) 'alpha '(95 50))
   ;; (add-to-list 'default-frame-alist '(alpha 95 50))
-  (global-linum-mode t)
-  (color-theme-monokai)
+  (custom-set-variables '(custom-enabled-themes (quote (deeper-blue))))
   (transparency 95)
 )
 (if window-system (setXmode))
+(put 'upcase-region 'disabled nil)
 
 ;; Org-mode strike done tasks
 (setq org-fontify-done-headline t)
@@ -125,3 +122,32 @@
    ((((class color) (min-colors 16) (background dark))
      (:foreground "Grey55" :strike-through t)))))
 
+;; ERC
+(require 'erc)
+(erc-autojoin-mode t)
+(setq erc-autojoin-channels-alist
+  '((".*\\.freenode.net"
+     "#emacs"
+     "#r_netsec"
+     "#security"
+     "#linux"
+     "#debian"
+     "#kernel"
+     "#raspbian"
+     "#php"
+     "#ruby"
+     "#postgresql"
+     "#nginx"
+     "#git"
+     )))
+(erc-track-mode t)
+(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                 "324" "329" "332" "333" "353" "477"))
+(setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+(defun djcb-erc-start-or-switch ()
+  "Connect to ERC, or switch to last active buffer"
+  (interactive)
+  (if (get-buffer "irc.freenode.net:6667")
+      (erc-track-switch-buffer 1)
+    (when (y-or-n-p "Start ERC? ")
+      (erc :server "irc.freenode.net" :port 6667 :nick "piotr404" :full-name "Piotr404"))))
