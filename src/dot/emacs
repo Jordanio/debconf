@@ -1,5 +1,5 @@
 (setq user-full-name "Pierre Lecocq"
-;;      user-mail-address "pierre.lecocq@mail.com"
+      user-mail-address "pierre.lecocq@gmail.com"
 )
 
 ;; Modes
@@ -7,7 +7,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (load "php-mode-improved")
 (load "autopair")
-;;(load "blank-mode")
 (load "ruby-mode")
 (load "auto-complete")
 (load "fill-column-indicator")
@@ -71,10 +70,15 @@
       x-select-enable-clipboard t)
 (global-set-key [delete] 'delete-char)
 (global-set-key "\C-h" 'backward-delete-char)
-(global-set-key (kbd "C-c e") 'djcb-erc-start-or-switch) ;; Switch to ERC
-(global-set-key (kbd "C-c C-g") 'goto-line) ;; Goto line
-(global-set-key (kbd "C-c C-g") 'comment-region) ;; Comment
-(global-set-key (kbd "C-c C-u") 'uncomment-region) ;; Uncomment
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+(define-key my-keys-minor-mode-map (kbd "C-c C-g") 'goto-line)
+(define-key my-keys-minor-mode-map (kbd "C-c C-c") 'comment-region)
+(define-key my-keys-minor-mode-map (kbd "C-c C-u") 'uncomment-region)
+(define-key my-keys-minor-mode-map (kbd "C-c e") 'djcb-erc-start-or-switch)
+(define-minor-mode my-keys-minor-mode "My keys minor mode"  t " my-keys" 'my-keys-minor-mode-map)
+(my-keys-minor-mode t)
+(defun my-minibuffer-setup-hook () (my-keys-minor-mode 0))
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
 
 ;; Look n feel
 (message "Setting up look and feel ...")
@@ -128,13 +132,8 @@
 (setq erc-autojoin-channels-alist
   '((".*\\.freenode.net"
      "#emacs"
-     "#r_netsec"
      "#security"
      "#linux"
-     "#debian"
-     "#php"
-     "#ruby"
-     "#nginx"
      )))
 (erc-track-mode t)
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
