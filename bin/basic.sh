@@ -33,7 +33,7 @@ if [[ $CHOICE == "y" ]]; then
         cp -R $SPATH/../src/bin ~/bin;
         cp -R $SPATH/../src/bin /home/$MAINUSER/bin;
         if ! [ -z $MAINUSER ]; then
-            for file in emacs emacs.d bashrc; do
+            for file in emacs emacs.d eshell bashrc; do
                 cp -R $SPATH/../src/dot/$file ~/.$file;
                 cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
             done
