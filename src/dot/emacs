@@ -1,5 +1,5 @@
 (setq user-full-name "Pierre Lecocq"
-      user-mail-address "pierre.lecocq@gmail.com"
+;;      user-mail-address "me@mail.com"
 )
 
 ;; Modes
