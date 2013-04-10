@@ -27,10 +27,9 @@
 (setq-default show-trailing-whitespace t)
 (setq-default highlight-tabs t)
 (show-paren-mode t)
-(setq require-final-newline t)
+(setq require-final-newline 'query)
 (setq next-line-add-newlines nil)
 (setq kill-whole-line t)
-(setq require-final-newline t)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (autopair-global-mode t)
 
@@ -95,6 +94,9 @@
 (line-number-mode t)
 (column-number-mode t)
 (display-time)
+(setq inhibit-default-init t)
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
+
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
