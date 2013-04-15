@@ -19,6 +19,7 @@ fi
 # Env vars
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:~/bin
 export EDITOR=emacs
+export LESS='--LINE-NUMBERS --quit-if-one-screen --quit-on-intr'
 
 # Aliases
 arch=`uname`
