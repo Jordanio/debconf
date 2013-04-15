@@ -35,4 +35,4 @@ fi
 alias rm='rm -i'
 alias grep='grep --color=auto'
 alias rcl='find . -name "*~" -exec rm -f {} \; ; find . -name ".*~" -exec rm -f {} \; ; find . -name "._*" -exec rm -f {} \; ; find . -name ".DS*" -exec rm -f {} \;'
-
+alias newfiles='find ~ -type f -mtime 0'
