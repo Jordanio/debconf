@@ -7,3 +7,4 @@ conky -c ~/.config/conkyrc &
 tint2 &
 rxvt &
 emacs &
+numlockx on &
