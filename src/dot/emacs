@@ -31,6 +31,7 @@
 (setq kill-whole-line t)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (autopair-global-mode t)
+(which-function-mode 1)
 
 ;; Indentation
 (message "Setting up indentation ...")
