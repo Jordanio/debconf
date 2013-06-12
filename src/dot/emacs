@@ -42,7 +42,7 @@
               (buffer-substring-no-properties (region-beginning) (region-end))
             (thing-at-point 'symbol)))
     (setq myUrl
-          (concat "http://fr.php.net/" myWord))
+          (concat "http://php.net/" myWord))
     (browse-url myUrl)))
 
 ;; Indentation
