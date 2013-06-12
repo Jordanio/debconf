@@ -33,6 +33,18 @@
 (autopair-global-mode t)
 (which-function-mode 1)
 
+;; PHP Doc. Credits: Ergo
+(defun php-lookup()
+  (interactive)
+  (let (myWord myUrl)
+    (setq myWord
+          (if (region-active-p)
+              (buffer-substring-no-properties (region-beginning) (region-end))
+            (thing-at-point 'symbol)))
+    (setq myUrl
+          (concat "http://fr.php.net/" myWord))
+    (browse-url myUrl)))
+
 ;; Indentation
 (message "Setting up indentation ...")
 (setq-default tab-width 4
@@ -74,6 +86,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-c C-c") 'comment-region)
 (define-key my-keys-minor-mode-map (kbd "C-c C-u") 'uncomment-region)
 (define-key my-keys-minor-mode-map (kbd "C-S-s") 'find-grep)
+(define-key my-keys-minor-mode-map (kbd "C-h p") 'php-lookup)
 (define-minor-mode my-keys-minor-mode "My keys minor mode"  t " my-keys" 'my-keys-minor-mode-map)
 (my-keys-minor-mode t)
 (defun my-minibuffer-setup-hook () (my-keys-minor-mode 0))
