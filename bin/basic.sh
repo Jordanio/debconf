@@ -33,10 +33,13 @@ if [[ $CHOICE == "y" ]]; then
         cp -R $SPATH/../src/bin ~/bin;
         cp -R $SPATH/../src/bin /home/$MAINUSER/bin;
         if ! [ -z $MAINUSER ]; then
-            for file in emacs emacs.d eshell bashrc; do
+            git clone https://github.com/pierre-lecocq/emacs.d.git /home/$MAINUSER/.emacs.d
+
+            for file in gitignore bashrc; do
                 cp -R $SPATH/../src/dot/$file ~/.$file;
                 cp -R $SPATH/../src/dot/$file /home/$MAINUSER/.$file;
             done
+
             chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/.*
             chown -R $MAINUSER:$MAINUSER /home/$MAINUSER/bin
         else
