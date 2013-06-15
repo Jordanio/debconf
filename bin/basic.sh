@@ -34,6 +34,7 @@ if [[ $CHOICE == "y" ]]; then
         cp -R $SPATH/../src/bin /home/$MAINUSER/bin;
         if ! [ -z $MAINUSER ]; then
             git clone https://github.com/pierre-lecocq/emacs.d.git /home/$MAINUSER/.emacs.d
+            git clone https://github.com/dimitri/el-get.git /home/$MAINUSER/.emacs.d/el-get
 
             for file in gitignore bashrc; do
                 cp -R $SPATH/../src/dot/$file ~/.$file;
