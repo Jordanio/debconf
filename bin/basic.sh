@@ -24,7 +24,7 @@ if [[ $CHOICE == "y" ]]; then
     sed -e 's/ main$/ main contrib non-free/g' -i /etc/apt/sources.list
     apt-get update
     apt-get autoremove --purge -y exim4-.\* portmap rpcbind
-    apt-get install -y git subversion curl irb rsync emacs emacs-goodies-el php-elisp tree zip unzip gcc build-essential linux-headers-$(uname -r) python ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby libxslt-dev libxml2-dev htop sloccount aria2 rar p7zip
+    apt-get install -y git subversion curl irb rsync emacs emacs-goodies-el php-elisp tree zip unzip gcc build-essential yasm linux-headers-$(uname -r) python ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby libxslt-dev libxml2-dev htop sloccount aria2 rar p7zip
     apt-get install -y nmap fail2ban denyhosts tcpdump httperf siege iptraf clamav selinux-basics selinux-policy-default
     selinux-activate
 
