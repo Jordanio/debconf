@@ -5,6 +5,4 @@ xcompmgr -fF -I-.001 -O-.002 -D3 &
 feh --bg-scale ~/Images/frenchtouch.jpg &
 conky -c ~/.config/conkyrc &
 tint2 &
-rxvt &
-emacs &
 numlockx on &

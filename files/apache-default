@@ -1,0 +1,44 @@
+ServerName local.com
+
+<VirtualHost *:80>
+    ServerName www.local.com
+    DocumentRoot /home/www/www
+
+    <Directory />
+        Order Deny,Allow
+        Deny from all
+        Options None
+        AllowOverride None
+    </Directory>
+
+    <Directory /home/www/www>
+        Order Allow,Deny
+        Allow from all
+        AllowOverride None
+        <LimitExcept GET POST>
+            Order allow,deny
+        </LimitExcept>
+    </Directory>
+
+    <Files ~ "^\.ht">
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </Files>
+
+    ErrorLog /home/www/logs/apache2-error.log
+    LogLevel warn
+    CustomLog /home/www/logs/apache2-access.log combined
+
+</VirtualHost>
+
+# <VirtualHost *:80>
+#     ServerName dev.local.com
+#     DocumentRoot /home/www/dev
+#     <Directory /home/www/dev>
+#     Options FollowSymLinks
+#     Order Allow,Deny
+#     Allow from all
+#     AllowOverride All
+#     </Directory>
+# </VirtualHost>

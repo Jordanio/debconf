@@ -1,18 +1,21 @@
-# secure htaccess file
+#
+# Security
+#
+
 <Files .htaccess>
     order allow,deny
     deny from all
 </Files>
 
-# limit access to local area network
-<Limit GET POST PUT DELETE>
-#    order deny,allow
-#    deny from all
-#    allow from 31.25.83.1 # Reaumur
-#    allow from 78.223.230.175 # Ordener
-</Limit>
+<Files .git/*>
+    order allow,deny
+    deny from all
+</Files>
 
-# for the rest of the world
+#
+# General config
+#
+
 ServerSignature Off
 LimitRequestBody 10240000
 SetEnv ZEND_OPTIMIZER 1
@@ -23,6 +26,10 @@ AddType image/x-icon .ico
     php_value session.cookie_lifetime 86400
     php_value session.gc_maxlifetime 86400
 </IfModule>
+
+#
+# Compress
+#
 
 <IfModule mod_headers.c>
     Header unset ETag
@@ -56,9 +63,17 @@ AddType image/x-icon .ico
     </FilesMatch>
 </IfModule>
 
+#
+# Rewrite
+#
+
 <IfModule mod_rewrite.c>
     #Options +FollowSymlinks
     RewriteEngine on
+
+    RewriteRule ^(.*)-p-([0-9]+)\.html /old/product/$2 [R,L]
+    RewriteRule ^(.*)-c-([0-9]+)\.html /old/category/$2 [R,L]
+    RewriteRule ^(.*)-c-([0-9]+)_([0-9]+)\.html /old/category/$3 [R,L]
 
     # GET and POST only
     RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|OPTIONS|HEAD|PUT|DELETE)
