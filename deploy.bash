@@ -43,10 +43,10 @@ function install_desktop {
 
     sudo apt-get update
     sudo apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode roxterm
-    sudo apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera ttf-mscorefonts-installer xscreensaver furiusisomount thunar gigolo gvfs gvfs-backends gvfs-fuse orage
+    sudo apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera ttf-mscorefonts-installer xscreensaver thunar gigolo gvfs gvfs-backends gvfs-fuse cifs-utils orage
     sudo apt-get install -y libnotify-bin notification-daemon numlockx
     sudo apt-get install -y alsa alsa-tools alsa-oss alsamixergui
-    sudo apt-get install -y chromium-browser scrot pidgin xpdf mirage calcurse filezilla icedove iceweasel
+    sudo apt-get install -y chromium-browser scrot pidgin xpdf mirage filezilla icedove iceweasel
     sudo apt-get install -y brasero vlc
     sudo apt-get install -y flashplugin-nonfree
 
