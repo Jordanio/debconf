@@ -43,12 +43,22 @@ function install_desktop {
 
     sudo apt-get update
     sudo apt-get install -y xorg openbox obconf obmenu tint2 xcompmgr feh rxvt-unicode roxterm
-    sudo apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera ttf-mscorefonts-installer xscreensaver furiusisomount thunar orage
+    sudo apt-get install -y lxappearance tango-icon-theme conky grun gksu suckless-tools ttf-bitstream-vera ttf-mscorefonts-installer xscreensaver furiusisomount thunar gigolo gvfs gvfs-backends gvfs-fuse orage
     sudo apt-get install -y libnotify-bin notification-daemon numlockx
     sudo apt-get install -y alsa alsa-tools alsa-oss alsamixergui
     sudo apt-get install -y chromium-browser scrot pidgin xpdf mirage calcurse filezilla icedove iceweasel
     sudo apt-get install -y brasero vlc
     sudo apt-get install -y flashplugin-nonfree
+
+    sudo mkdir -p $HOME/.local/share/applications
+    if ! [ -f $HOME/.local/share/applications/defaults.list ]; then
+        sudo echo "[Default Applications]" > $HOME/.local/share/applications/defaults.list
+    fi
+
+    sudo echo "x-directory/gnome-default-handler=Thunar.desktop" >> $HOME/.local/share/applications/defaults.list
+    sudo echo "inode/directory=Thunar.desktop" >> $HOME/.local/share/applications/defaults.list
+    sudo echo "x-directory/normal=Thunar.desktop" >> $HOME/.local/share/applications/defaults.list
+    sudo gpasswd -a $USER fuse
 
     sudo cp $FILESPATH/fonts.conf $HOME/.fonts.conf
     sudo cp $FILESPATH/Xdefaults $HOME/.Xdefaults
@@ -62,6 +72,7 @@ function install_desktop {
     sudo chown $USER:$USER $HOME/.Xresources
     sudo chown $USER:$USER $HOME/.xinitrc
     sudo chown -R $USER:$USER $HOME/.config
+    sudo chown -R $USER:$USER $HOME/.local
 
     sudo Xorg -configure
     sudo alsactl init
