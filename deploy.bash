@@ -33,7 +33,7 @@ function install_system {
     sudo apt-get install -y gcc build-essential yasm linux-headers-$(uname -r) libxslt-dev libxml2-dev
     sudo apt-get install -y zip unzip rar p7zip
     sudo apt-get install -y irb python ruby libruby ruby-dev rubygems libmysql-ruby libactiverecord-ruby
-    sudo apt-get install -y nmap fail2ban denyhosts tcpdump httperf siege iptraf clamav selinux-basics selinux-policy-default
+    sudo apt-get install -y nmap fail2ban denyhosts tcpdump httperf siege iptraf clamav selinux-basics selinux-policy-default secure-delete
 
     sudo selinux-activate
 }

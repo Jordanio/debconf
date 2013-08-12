@@ -35,5 +35,5 @@ fi
 
 alias grep='grep --color=auto'
 alias rcl='find . -name "*~" -exec rm -f {} \; ; find . -name ".*~" -exec rm -f {} \; ; find . -name "._*" -exec rm -f {} \; ; find . -name ".DS*" -exec rm -f {} \;'
-alias newfiles='find ~ -type f -mtime 0'
+alias newfiles='find . -type f -mtime 0'
 alias etagsup='rm -f TAGS; find . -regex ".*\.\(c\|h\|el\|rb\|py\|sh\|php\)" -print | xargs etags -a'
