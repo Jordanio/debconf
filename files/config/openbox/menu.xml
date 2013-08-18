@@ -14,18 +14,24 @@
 
   <separator />
 
-  <item label="Chromium"><action name="Execute"><execute>chromium</execute></action></item>
   <item label="Iceweasel"><action name="Execute"><execute>iceweasel</execute></action></item>
-  <item label="File browser"><action name="Execute"><execute>thunar</execute></action></item>
-  <item label="FTP"><action name="Execute"><execute>filezilla</execute></action></item>
-  <item label="Emails"><action name="Execute"><execute>icedove</execute></action></item>
+  <item label="Chromium"><action name="Execute"><execute>chromium</execute></action></item>
+  <item label="Thunar"><action name="Execute"><execute>thunar</execute></action></item>
+  <item label="Icedove"><action name="Execute"><execute>icedove</execute></action></item>
+  <item label="Filezilla"><action name="Execute"><execute>filezilla</execute></action></item>
+
+  <separator />
+
   <item label="Virtualbox"><action name="Execute"><execute>virtualbox</execute></action></item>
-  <item label="VLC"><action name="Execute"><execute>vlc</execute></action></item>
-  <item label="AlsaMixer"><action name="Execute"><execute>alsamixergui</execute></action></item>
   <item label="Brasero"><action name="Execute"><execute>brasero</execute></action></item>
   <item label="Skype"><action name="Execute"><execute>skype</execute></action></item>
   <item label="Pidgin"><action name="Execute"><execute>pidgin</execute></action></item>
   <item label="Screenshot"><action name="Execute"><execute>scrot</execute></action></item>
+
+  <separator />
+
+  <item label="Vlc"><action name="Execute"><execute>vlc</execute></action></item>
+  <item label="AlsaMixer"><action name="Execute"><execute>alsamixergui</execute></action></item>
 
   <separator />
 
